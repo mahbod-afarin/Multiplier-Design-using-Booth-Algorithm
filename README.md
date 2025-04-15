@@ -34,7 +34,7 @@ After designing both modules independently, **connect them to form a complete mu
 - Simulation: ModelSim / Vivado
 - FPGA Board (optional for hardware demonstration)
 
---
+---
 
 ## Project Overview
 
