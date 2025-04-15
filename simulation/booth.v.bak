@@ -1,0 +1,40 @@
+module booth(product, busy, m, r, clk, start);
+  input [7:0] m, r;
+  output [15:0] product;
+  input clk, start;
+  output busy;
+  integer counter = 0;
+  reg q = 0;
+  reg [16:0] a, s, p;
+  
+  assign busy = counter == 8 ? 1'b0 : 1'b1;
+  assign product[15:0] = p[16:1];
+  
+  always @(clk)
+  begin
+  if(start)
+  begin
+      a[16:0] = {m, 10'd0};
+      s[16:0] = {-m, 10'd0};
+      $display("r = %d", r);
+      p[16:0] = {8'd0, r, 1'b0};
+      counter = 0;
+  end 
+  
+  if(!start && counter < 8)
+    begin
+      if(p[1:0] == 2'b10)
+        begin
+          p = p + s;
+        end
+      else if(p[1:0] == 2'b01)
+        begin
+          p = p + a;
+        end
+      counter = counter + 1;
+      $display("p = %b", p);
+      p = p >> 1;
+      $display("p = %b", p);
+    end
+  end
+endmodule
