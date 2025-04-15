@@ -1,7 +1,5 @@
 # Multiplier-Design-using-Booth-Algorithm
 
-### Objective
-
 The goal of this experiment is to design a **multiplier unit** that uses the **Booth multiplication algorithm** for signed binary multiplication.
 
 ## Design Components
@@ -18,25 +16,19 @@ Your implementation should consist of two main parts:
 
 After designing both modules independently, **connect them to form a complete multiplier unit**.
 
----
-
-## ⚙️ Key Requirements
+## Key Requirements
 
 - When shifting the **Multiplier** to the right, your shift unit must support shifting **by more than one bit per clock cycle**.
 - This enables performance improvements over the traditional **Add & Shift** method.
 - Ensure the shift logic is optimized for speed and supports variable-length shifts as required by the Booth algorithm.
 
----
-
-## ✅ Expected Outcome
+## Expected Outcome
 
 - Correct implementation of Booth’s multiplication logic.
 - Ability to handle signed binary inputs.
 - Efficient shift logic to accelerate multiplication compared to basic methods.
 
----
-
-## 🛠 Tools
+## Tools
 
 - Verilog / VHDL
 - Simulation: ModelSim / Vivado
